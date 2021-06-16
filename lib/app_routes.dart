@@ -6,7 +6,7 @@ import 'package:flutter_application_1/app/screens/home/home_screen.dart';
 import 'package:flutter_application_1/app/screens/login/login_screen.dart';
 import 'package:flutter_application_1/app/screens/scan/scan_screen.dart';
 import 'package:flutter_application_1/app/screens/splash/splash_screen.dart';
-
+import 'package:flutter_application_1/app/screens/scan_details/scan_details.dart';
 import 'app/modules/history/model/history_model.dart';
 
 const kMainRoute = '/';
@@ -15,6 +15,7 @@ const kLoginRoute = '/login';
 const kHistoryRoute = '/history';
 const kHistoryDetailsRoute = '/history-details';
 const kScanRoute = '/scan';
+const kScanDetailsRoute = '/scan-details';
 
 final Map<String, WidgetBuilder> kRoutes = {
   kMainRoute: (_) => SplashScreen(),
@@ -28,6 +29,10 @@ onGenerateRoute(settings) {
   if (settings.name == kHistoryDetailsRoute) {
     History data = settings.arguments;
     return MaterialPageRoute(builder: (_) => HistoryDetailsScreen(data: data));
+    } else if (settings.name == kScanDetailsRoute) {
+    String data = settings.arguments;
+    return MaterialPageRoute(
+        builder: (_) => ScanDetailsScreen(imagePath: data));
   } else if (settings.name != null) {
     return MaterialPageRoute(builder: kRoutes[settings.name]!);
   } else {
