@@ -149,35 +149,35 @@ class _HomeScreenState extends State<HomeScreen> {
           onTap: () {
             Navigator.pop(context);
           },
-          child: Image.asset('assets/images/logo.png'),
+          child: Padding(padding: const EdgeInsets.symmetric(horizontal: 10), child: Image.asset('assets/images/logo.png')) 
         ),
         elevation: 0,
         actions: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 5),
             child: IconButton(
               icon: Icon(Icons.save),
-              color: Colors.black,
+              color: Colors.white,
               onPressed: () {
                 navigateToHistory(context);
               },
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 5),
             child: IconButton(
               icon: Icon(Icons.logout),
-              color: Colors.red,
+              color: Colors.white,
               onPressed: () {
                 logout();
               },
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 5),
             child: IconButton(
               icon: Icon(Icons.camera),
-              color: Colors.red,
+              color: Colors.white,
               onPressed: () {
                 navigateToScanScreen();
               },
@@ -186,7 +186,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(40),
+        padding: const EdgeInsets.all(20),
         child: Container(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -196,7 +196,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                      'dernier résulatat calculé : ${last_stored_result.toString()}'),
+                      'Dernier résultat calculé : ${last_stored_result.toString()}'),
                   Text(
                     equation.toString(),
                     style: TextStyle(color: Colors.black.withOpacity(0.5)),
@@ -208,7 +208,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-              BackButton(),
               Container(
                 child: Column(
                     children: elements

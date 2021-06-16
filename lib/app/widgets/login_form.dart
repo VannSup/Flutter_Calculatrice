@@ -96,7 +96,7 @@ class _LoginFormState extends State<LoginForm> {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: TextFormField(
-                            keyboardType: TextInputType.datetime,
+                            keyboardType: TextInputType.emailAddress,
                             controller: _emailController,
                             validator: (value) {
                               String pattern =
@@ -112,7 +112,7 @@ class _LoginFormState extends State<LoginForm> {
                             },
                             decoration: InputDecoration(
                                 labelText: 'E-mail',
-                                helperText: 'mettez votre e-mail',
+                                helperText: 'Mettez votre e-mail.',
                                 hintText: 'email@exemple.com'),
                           ),
                         ),
@@ -122,7 +122,8 @@ class _LoginFormState extends State<LoginForm> {
                             controller: _passwordController,
                             decoration: InputDecoration(
                               labelText: 'Mot de passe',
-                              helperText: 'mettez votre mot de passe',
+                              helperText: 'Mettez votre mot de passes.',
+                              hintText: '•••••••••••••••'
                             ),
                             validator: (value) {
                               print(value);
